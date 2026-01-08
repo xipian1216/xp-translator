@@ -106,28 +106,6 @@ flutter run -d macos
 # 选项2：使用 Web 浏览器
 flutter run -d chrome
 
-# 选项3：使用一键启动脚本
-chmod +x start_project.sh
-./start_project.sh start
-```
-
-### 3. 一键启动（推荐）
-项目提供了完整的启动脚本：
-```bash
-# 授予执行权限
-chmod +x start_project.sh
-
-# 启动完整项目
-./start_project.sh start
-
-# 停止项目
-./start_project.sh stop
-
-# 查看状态
-./start_project.sh status
-
-# 重启项目
-./start_project.sh restart
 ```
 
 ## 🎯 功能演示
