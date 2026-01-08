@@ -1,0 +1,16 @@
+{
+  "timestamp": 1767803015.73645,
+  "exit_code": 1,
+  "test_files": [
+    "test_model_switching.py",
+    "test_clients.py",
+    "test_models.py",
+    "test_api.py"
+  ],
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0
+  }
+}

@@ -11,20 +11,32 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:frontend/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Translation page renders correctly', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const XPTranslatorApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that the app title is displayed
+    expect(find.text('XP Translator'), findsOneWidget);
+    
+    // Verify that input field is present
+    expect(find.text('输入中文文本'), findsOneWidget);
+    
+    // Verify that translate button is present
+    expect(find.text('翻译'), findsOneWidget);
+    
+    // Verify that clear button is present
+    expect(find.text('清空'), findsOneWidget);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  testWidgets('Settings dialog can be opened', (WidgetTester tester) async {
+    await tester.pumpWidget(const XPTranslatorApp());
+    
+    // Tap the settings icon
+    await tester.tap(find.byIcon(Icons.settings));
+    await tester.pumpAndSettle();
+    
+    // Verify settings dialog is shown
+    expect(find.text('设置'), findsOneWidget);
+    expect(find.text('后端 API 地址'), findsOneWidget);
   });
 }
